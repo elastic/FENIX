@@ -1,0 +1,5 @@
+technique: memfd-script-exec
+script: payloads/scripts/hello.py
+method: interpreter-procfs
+interpreter: python3
+name: fenix_script

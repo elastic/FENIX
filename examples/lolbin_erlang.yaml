@@ -1,0 +1,4 @@
+technique: lolbin-fd-exec
+lolbin: erlang
+payload: payloads/scripts/hello.escript
+name: fenix_lolbin

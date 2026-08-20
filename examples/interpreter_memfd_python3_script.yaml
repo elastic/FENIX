@@ -1,0 +1,4 @@
+technique: interpreter-memfd-exec
+interpreter: python3
+mode: script-file
+payload: payloads/hello_elf/hello

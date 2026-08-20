@@ -1,0 +1,4 @@
+technique: memfd-script-exec
+script: payloads/scripts/hello.js
+method: shebang
+name: fenix_script

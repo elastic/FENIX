@@ -1,0 +1,4 @@
+technique: shm-so-load
+module: payloads/hello_so/hello_so.so
+symbol: fenix_hello
+name: fenix_shm_module

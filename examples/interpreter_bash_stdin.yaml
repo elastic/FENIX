@@ -1,0 +1,4 @@
+technique: interpreter-exec
+interpreter: bash
+mode: stdin
+code: 'echo hello from fenix'

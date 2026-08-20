@@ -1,0 +1,7 @@
+# RemoteELFMemExec-style XOR layer (use a pre-encoded payload file in lab)
+technique: fileless-staging
+source_file: payloads/staged/hello_elf.xor
+decode: xor
+xor_key: "fenix"
+execute: memfd
+method: fexecve

@@ -1,0 +1,4 @@
+technique: memfd-script-exec
+script: payloads/scripts/hello_shebang.sh
+method: shebang
+name: fenix_script

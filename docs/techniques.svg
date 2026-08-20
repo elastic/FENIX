@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 700" role="img" aria-labelledby="title desc">
+  <title id="title">FENIX fileless loading techniques</title>
+  <desc id="desc">Eight ways FENIX runs a sample payload without a normal on-disk binary. Each item ends with a fenix run command.</desc>
+  <style>
+    .page { fill: #f4f6f8; }
+    .card { fill: #ffffff; stroke: #dce1e8; stroke-width: 1; }
+    .chip { fill: #f0f3f7; }
+    .cmd { fill: #1b2430; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; }
+    .k { fill: #5c6778; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; }
+    .h { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 700; fill: #1b2430; }
+    .sub { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 10.5px; fill: #5c6778; }
+    .title { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 20px; font-weight: 700; fill: #1b2430; }
+    .lead { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; fill: #5c6778; }
+    .foot { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 10.5px; fill: #7a8494; }
+    @media (prefers-color-scheme: dark) {
+      .page { fill: #12161d; }
+      .card { fill: #1a2029; stroke: #2c3542; }
+      .chip { fill: #242c38; }
+      .cmd { fill: #e8edf4; }
+      .k { fill: #9aa5b5; }
+      .h { fill: #e8edf4; }
+      .sub { fill: #9aa5b5; }
+      .title { fill: #e8edf4; }
+      .lead { fill: #9aa5b5; }
+      .foot { fill: #7d8796; }
+    }
+  </style>
+
+  <rect class="page" width="1120" height="700" rx="12"/>
+
+  <text class="title" x="36" y="42">FENIX techniques</text>
+  <text class="lead" x="36" y="64">Ways to run a sample payload without leaving a normal executable on disk.</text>
+  <text class="lead" x="36" y="82">Each row ends with the command: fenix run &lt;id&gt;</text>
+
+  <!-- row 1 -->
+  <g transform="translate(28,102)">
+    <rect class="card" width="256" height="258" rx="10"/>
+    <rect x="0" y="0" width="6" height="258" rx="3" fill="#1f4e79"/>
+    <text class="h" x="22" y="26">Anonymous memfd</text>
+    <text class="sub" x="22" y="44">Kernel RAM file. No /tmp path.</text>
+    <rect class="chip" x="16" y="58" width="224" height="42" rx="6"/>
+    <text class="k" x="26" y="76">run an ELF</text>
+    <text class="cmd" x="26" y="92">fenix run memfd-exec</text>
+    <rect class="chip" x="16" y="106" width="224" height="42" rx="6"/>
+    <text class="k" x="26" y="124">run a script (shebang or -f)</text>
+    <text class="cmd" x="26" y="140">fenix run memfd-script-exec</text>
+    <rect class="chip" x="16" y="154" width="224" height="42" rx="6"/>
+    <text class="k" x="26" y="172">copy self, unlink, re-exec</text>
+    <text class="cmd" x="26" y="188">fenix run memfd-self-reexec</text>
+    <rect class="chip" x="16" y="202" width="224" height="42" rx="6"/>
+    <text class="k" x="26" y="220">dlopen a .so</text>
+    <text class="cmd" x="26" y="236">fenix run memfd-so-load</text>
+  </g>
+
+  <g transform="translate(298,102)">
+    <rect class="card" width="256" height="258" rx="10"/>
+    <rect x="0" y="0" width="6" height="258" rx="3" fill="#0d7377"/>
+    <text class="h" x="22" y="26">POSIX shm</text>
+    <text class="sub" x="22" y="44">Same idea, object in /dev/shm.</text>
+    <rect class="chip" x="16" y="70" width="224" height="72" rx="6"/>
+    <text class="k" x="26" y="100">run an ELF from tmpfs</text>
+    <text class="cmd" x="26" y="118">fenix run shm-exec</text>
+    <rect class="chip" x="16" y="154" width="224" height="72" rx="6"/>
+    <text class="k" x="26" y="184">dlopen a .so from tmpfs</text>
+    <text class="cmd" x="26" y="202">fenix run shm-so-load</text>
+  </g>
+
+  <g transform="translate(568,102)">
+    <rect class="card" width="256" height="258" rx="10"/>
+    <rect x="0" y="0" width="6" height="258" rx="3" fill="#6b4c9a"/>
+    <text class="h" x="22" y="26">Pipe / stdin</text>
+    <text class="sub" x="22" y="44">Bytes go through a pipe, not a file.</text>
+    <rect class="chip" x="16" y="58" width="224" height="56" rx="6"/>
+    <text class="k" x="26" y="78">fexecve the pipe, or feed stdin</text>
+    <text class="cmd" x="26" y="94">fenix run pipe-exec</text>
+    <rect class="chip" x="16" y="122" width="224" height="56" rx="6"/>
+    <text class="k" x="26" y="142">read ELF from stdin into memfd</text>
+    <text class="cmd" x="26" y="158">fenix run stdin-memexec</text>
+    <rect class="chip" x="16" y="186" width="224" height="52" rx="6"/>
+    <text class="k" x="26" y="206">python/perl/bash -c or stdin</text>
+    <text class="cmd" x="26" y="222">fenix run interpreter-exec</text>
+  </g>
+
+  <g transform="translate(838,102)">
+    <rect class="card" width="256" height="258" rx="10"/>
+    <rect x="0" y="0" width="6" height="258" rx="3" fill="#8b5a2b"/>
+    <text class="h" x="22" y="26">Unlinked file</text>
+    <text class="sub" x="22" y="44">Path is gone; the open inode stays.</text>
+    <rect class="chip" x="16" y="70" width="224" height="72" rx="6"/>
+    <text class="k" x="26" y="100">exec /proc/self/fd, then unlink</text>
+    <text class="cmd" x="26" y="118">fenix run proc-fd-exec</text>
+    <rect class="chip" x="16" y="154" width="224" height="72" rx="6"/>
+    <text class="k" x="26" y="184">start process, then delete file</text>
+    <text class="cmd" x="26" y="202">fenix run deleted-file-exec</text>
+  </g>
+
+  <!-- row 2 -->
+  <g transform="translate(28,376)">
+    <rect class="card" width="256" height="278" rx="10"/>
+    <rect x="0" y="0" width="6" height="278" rx="3" fill="#2d6a4f"/>
+    <text class="h" x="22" y="26">Interpreter memfd</text>
+    <text class="sub" x="22" y="44">perl / python3 / php / ruby builds</text>
+    <text class="sub" x="22" y="58">the memfd, then execs the ELF.</text>
+    <rect class="chip" x="16" y="80" width="224" height="80" rx="6"/>
+    <text class="k" x="26" y="104">one-liner (-e/-c/-r) or</text>
+    <text class="k" x="26" y="120">memfd_payload.* script</text>
+    <text class="cmd" x="26" y="144">fenix run interpreter-memfd-exec</text>
+  </g>
+
+  <g transform="translate(298,376)">
+    <rect class="card" width="256" height="278" rx="10"/>
+    <rect x="0" y="0" width="6" height="278" rx="3" fill="#b45309"/>
+    <text class="h" x="22" y="26">Staging</text>
+    <text class="sub" x="22" y="44">Fetch or decode, then memfd or</text>
+    <text class="sub" x="22" y="58">interpreter. Name a host to upload.</text>
+    <rect class="chip" x="16" y="80" width="224" height="80" rx="6"/>
+    <text class="k" x="26" y="104">file, HTTP, xor, optional upload</text>
+    <text class="k" x="26" y="120">then execute memfd | interpreter</text>
+    <text class="cmd" x="26" y="144">fenix run fileless-staging</text>
+  </g>
+
+  <g transform="translate(568,376)">
+    <rect class="card" width="256" height="278" rx="10"/>
+    <rect x="0" y="0" width="6" height="278" rx="3" fill="#9f1239"/>
+    <text class="h" x="22" y="26">LoLbin + fd</text>
+    <text class="sub" x="22" y="44">A common binary execs the memfd</text>
+    <text class="sub" x="22" y="58">as /proc/self/fd/N.</text>
+    <rect class="chip" x="16" y="80" width="224" height="80" rx="6"/>
+    <text class="k" x="26" y="104">ld-linux, busybox, julia,</text>
+    <text class="k" x="26" y="120">erlang/escript</text>
+    <text class="cmd" x="26" y="144">fenix run lolbin-fd-exec</text>
+  </g>
+
+  <g transform="translate(838,376)">
+    <rect class="card" width="256" height="278" rx="10"/>
+    <rect x="0" y="0" width="6" height="278" rx="3" fill="#334155"/>
+    <text class="h" x="22" y="26">Kernel module</text>
+    <text class="sub" x="22" y="44">Root. Loads hello_lkm (logs to</text>
+    <text class="sub" x="22" y="58">dmesg) from memory or an fd.</text>
+    <rect class="chip" x="16" y="80" width="224" height="80" rx="6"/>
+    <text class="k" x="26" y="104">heap, memfd, fork, finit_module,</text>
+    <text class="k" x="26" y="120">or .ko embedded in a helper</text>
+    <text class="cmd" x="26" y="144">fenix run lkm-load</text>
+  </g>
+
+  <text class="foot" x="36" y="678">Flags: fenix info memfd-exec     Full pass: fenix run-all</text>
+</svg>

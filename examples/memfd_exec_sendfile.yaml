@@ -1,0 +1,5 @@
+technique: memfd-exec
+payload: payloads/hello_elf/hello
+name: fenix_payload
+method: procfs-fd
+ingest: sendfile

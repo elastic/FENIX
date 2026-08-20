@@ -1,0 +1,5 @@
+technique: memfd-script-exec
+script: payloads/scripts/hello.awk
+method: interpreter-procfs
+interpreter: awk
+name: fenix_script

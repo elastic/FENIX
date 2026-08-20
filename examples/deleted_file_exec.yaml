@@ -1,0 +1,5 @@
+technique: deleted-file-exec
+payload: payloads/sleep_elf/sleep
+path: /tmp/fenix_sleep
+args: "60"
+no_wait: true

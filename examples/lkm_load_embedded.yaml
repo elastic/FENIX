@@ -1,0 +1,3 @@
+technique: lkm-load
+method: embedded-init-module
+i_understand_this_loads_kernel_code: true

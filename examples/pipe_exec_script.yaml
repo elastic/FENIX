@@ -1,0 +1,4 @@
+technique: pipe-exec
+type: script
+interpreter: python3
+code: 'print("hello from fenix pipe script")'

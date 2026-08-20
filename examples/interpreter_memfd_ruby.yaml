@@ -1,0 +1,3 @@
+technique: interpreter-memfd-exec
+interpreter: ruby
+payload: payloads/hello_elf/hello

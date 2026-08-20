@@ -1,0 +1,6 @@
+# Default unlinks bin/fenix-memfd-self-reexec. Restore with: make helpers
+# (fenix run-all uses --no-unlink so user → sudo --full stays repeatable)
+technique: memfd-self-reexec
+name: fenix_self
+method: execveat
+argv0: fenix_self_reexec

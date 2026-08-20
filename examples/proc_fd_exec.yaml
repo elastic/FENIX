@@ -1,0 +1,5 @@
+# Regular open fd + unlink; fexecve (distinct from memfd_create path)
+technique: proc-fd-exec
+payload: payloads/hello_elf/hello
+method: fexecve
+unlink_after_open: true

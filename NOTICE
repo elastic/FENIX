@@ -1,0 +1,8 @@
+FENIX
+Copyright 2026 Elasticsearch B.V.
+
+This product includes software developed by Elasticsearch B.V.
+
+The sample kernel module at payloads/hello_lkm/hello_lkm.c is licensed
+under GPL-2.0-only as required to use Linux kernel headers. See that
+file's SPDX identifier. The remainder of this repository is Apache-2.0.

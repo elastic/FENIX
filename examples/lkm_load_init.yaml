@@ -1,0 +1,4 @@
+technique: lkm-load
+module: payloads/hello_lkm/hello_lkm.ko
+method: init_module
+i_understand_this_loads_kernel_code: true

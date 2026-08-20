@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fenix"
+version = "1.0.0"
+description = "Fileless Execution for NIX — Linux fileless-execution lab PoC framework"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Elasticsearch B.V." }]
+keywords = ["security", "linux", "fileless", "memfd", "detection-engineering", "lab"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "requests>=2.28",
+    "typer>=0.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/elastic/fenix"
+Source = "https://github.com/elastic/fenix"
+
+[project.scripts]
+fenix = "fenix.cli:main"
+
+[tool.setuptools]
+license-files = ["LICENSE", "NOTICE"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fenix*"]

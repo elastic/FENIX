@@ -1,0 +1,5 @@
+# QLNX-style memfd execution path
+technique: memfd-exec
+payload: payloads/hello_elf/hello
+name: fenix_payload
+method: execveat

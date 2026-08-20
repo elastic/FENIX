@@ -1,0 +1,8 @@
+# Staging chain without memfd ELF: read script → interpreter stdin
+technique: fileless-staging
+source_file: payloads/scripts/hello.py
+decode: none
+decompress: none
+execute: interpreter
+interpreter: python3
+mode: stdin

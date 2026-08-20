@@ -1,0 +1,3 @@
+# Remote staging via built-in lab preset (GitHub raw). Fork? Set FENIX_LAB_STAGING_BASE.
+technique: fileless-staging
+lab_remote: hello-b64

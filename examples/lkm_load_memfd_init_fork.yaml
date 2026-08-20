@@ -1,0 +1,4 @@
+technique: lkm-load
+module: payloads/hello_lkm/hello_lkm.ko
+method: memfd-init-module-fork
+i_understand_this_loads_kernel_code: true

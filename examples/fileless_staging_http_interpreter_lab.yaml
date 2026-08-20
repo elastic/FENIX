@@ -1,0 +1,3 @@
+# Remote script staging (hello.py on GitHub raw → python3 stdin)
+technique: fileless-staging
+lab_remote: hello-py

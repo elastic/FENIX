@@ -1,0 +1,3 @@
+# Remote XOR staging (hello_elf.xor on GitHub raw + key fenix)
+technique: fileless-staging
+lab_remote: hello-xor

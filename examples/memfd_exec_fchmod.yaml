@@ -1,0 +1,6 @@
+# sympy-dev-style: mark memfd executable before execve
+technique: memfd-exec
+payload: payloads/hello_elf/hello
+name: fenix_payload
+method: procfs-fd
+fchmod: true

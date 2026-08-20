@@ -1,0 +1,4 @@
+technique: lolbin-fd-exec
+lolbin: julia
+payload: payloads/scripts/hello.jl
+name: fenix_lolbin

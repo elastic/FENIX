@@ -1,0 +1,4 @@
+technique: lolbin-fd-exec
+lolbin: ld-linux
+payload: payloads/hello_elf/hello
+name: fenix_lolbin

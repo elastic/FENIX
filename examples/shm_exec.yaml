@@ -1,0 +1,7 @@
+# Without unlink, /dev/shm/fenix_shm_payload stays behind. A later root shm_open
+# can fail with Permission denied (sticky /dev/shm). fenix cleanup, or unlink: true
+technique: shm-exec
+payload: payloads/hello_elf/hello
+name: fenix_shm_payload
+method: procfs-fd
+ingest: write

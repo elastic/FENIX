@@ -1,0 +1,3 @@
+technique: pipe-exec
+type: elf
+payload: payloads/hello_elf/hello

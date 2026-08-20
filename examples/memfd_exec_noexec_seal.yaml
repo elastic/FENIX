@@ -1,0 +1,8 @@
+# Requires kernel with MFD_NOEXEC_SEAL (6.3+). Pair with --fchmod for bypass lab.
+# See docs/MEMFD_NOEXEC_LAB.md
+technique: memfd-exec
+payload: payloads/hello_elf/hello
+name: fenix_noexec_lab
+method: execveat
+noexec_seal: true
+fchmod: true

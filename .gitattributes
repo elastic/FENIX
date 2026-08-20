@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.sh text eol=lf
+payloads/scripts/* text eol=lf
+*.png binary
+*.ko binary

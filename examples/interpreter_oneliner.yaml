@@ -1,0 +1,4 @@
+technique: interpreter-exec
+interpreter: python3
+mode: one-liner
+code: 'print("hello from fenix")'
