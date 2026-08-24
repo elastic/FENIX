@@ -2,6 +2,12 @@
 
 All notable changes to FENIX are documented here.
 
+## [Unreleased]
+
+### Changed
+
+- Mixed-license layout (`LICENSE` plus `licenses/`), Apache-2.0 headers on source files, third-party NOTICE attribution, and Backstage `catalog-info.yaml` for the public-repo checklist.
+
 ## [1.0.0] — 2026-08-20
 
 Public release. Not published to PyPI.

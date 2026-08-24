@@ -1,0 +1,24 @@
+Generated from `pip install -e .` (Python 3.12) plus SPDX classification
+against Elastic's Green/Yellow/Red lists. Does not include
+payloads/hello_lkm/hello_lkm.c (GPL-2.0-only; not a pip package).
+
+fenix is this repository (first-party Apache-2.0).
+certifi is MPL-2.0 (Yellow; automatic exception: unmodified PyPI package,
+NOTICE links to https://github.com/certifi/python-certifi).
+
+Name                 Version     SPDX          List
+fenix                1.0.0       Apache-2.0    first-party
+requests             2.34.2      Apache-2.0    Green
+colorama             0.4.6       BSD-3-Clause  Green
+Pygments             2.21.0      BSD-2-Clause  Green
+idna                 3.19        BSD-3-Clause  Green
+shellingham          1.5.4       ISC           Green
+annotated-doc        0.0.5       MIT           Green
+charset-normalizer   3.5.1       MIT           Green
+typer                0.27.1      MIT           Green
+urllib3              2.7.0       MIT           Green
+PyYAML               6.0.3       MIT           Green
+markdown-it-py       4.2.0       MIT           Green
+mdurl                0.1.2       MIT           Green
+rich                 15.0.0      MIT           Green
+certifi              2026.7.22   MPL-2.0       Yellow (auto exception)

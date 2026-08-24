@@ -2,7 +2,7 @@
 
 FENIX is a **lab-only** fileless-execution PoC for detection engineering on systems you own.
 
-This tree is published as a **snapshot**. It is not under active development; there is no CI. **GitHub issues and pull requests are not accepted.**
+This tree is published as a **snapshot**, not an officially supported Elastic product. It is not under active development; there is no CI. **GitHub issues and pull requests are not accepted.**
 
 This project follows the [Elastic Community Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -21,7 +21,7 @@ Install from a clone (`pip install -e .`). FENIX is not published to PyPI. Use a
 
 ## License
 
-Apache License 2.0, except `payloads/hello_lkm/hello_lkm.c` which is GPL-2.0-only.
+Apache License 2.0, except `payloads/hello_lkm/hello_lkm.c` which is GPL-2.0-only. See [LICENSE](LICENSE) and [licenses/](licenses/).
 
 ## Out of scope
 

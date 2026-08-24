@@ -25,6 +25,7 @@ Thumbs.db
 .idea/
 .vscode/
 .cursor/
+.venv-licenses/
 node_modules/
 .pytest_cache/
 .mypy_cache/

@@ -1,4 +1,8 @@
 /*
+ * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
+ * or more contributor license agreements. See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ *
  * SPDX-License-Identifier: GPL-2.0-only
  *
  * hello_lkm — Benign test kernel module for FENIX lab use.

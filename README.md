@@ -53,7 +53,7 @@ $F cleanup
 
 ## Disclaimer
 
-Do not run this against systems you are not allowed to test.
+FENIX is a **lab snapshot**, not an officially supported Elastic product. Do not run this against systems you are not allowed to test.
 
 Helpers call `memfd_create`, `execveat`, `init_module`, and similar APIs. Antivirus and GitHub scanners may flag them. See [SECURITY.md](SECURITY.md).
 
@@ -61,6 +61,6 @@ Issues and pull requests are not accepted.
 
 ## License
 
-Apache License 2.0, Copyright Elasticsearch B.V. ([LICENSE](LICENSE), [NOTICE](NOTICE)).
+Apache License 2.0 is the default. `payloads/hello_lkm/hello_lkm.c` is GPL-2.0-only because it includes Linux kernel headers. See [LICENSE](LICENSE), [NOTICE](NOTICE), and [licenses/](licenses/).
 
-`payloads/hello_lkm/hello_lkm.c` is GPL-2.0-only because it includes Linux kernel headers. Everything else is Apache-2.0.
+Copyright Elasticsearch B.V.

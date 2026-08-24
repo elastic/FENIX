@@ -37,7 +37,7 @@ Source = "https://github.com/elastic/fenix"
 fenix = "fenix.cli:main"
 
 [tool.setuptools]
-license-files = ["LICENSE", "NOTICE"]
+license-files = ["LICENSE", "NOTICE", "licenses/*"]
 
 [tool.setuptools.packages.find]
 where = ["."]

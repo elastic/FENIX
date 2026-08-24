@@ -12,10 +12,10 @@ Do not open a public GitHub issue for vulnerabilities.
 
 ## What this repository is
 
-FENIX is a **lab-only** framework for reproducing Linux fileless-execution
-patterns with **benign** sample payloads (they print `hello from fenix` or
-sleep). It is intended for authorized detection engineering on systems you
-own and control.
+FENIX is a **lab-only snapshot** (not an officially supported Elastic product)
+for reproducing Linux fileless-execution patterns with **benign** sample
+payloads (they print `hello from fenix` or sleep). It is intended for
+authorized detection engineering on systems you own and control.
 
 It is **not** malware, a C2 framework, or an exploit kit. Compiled helpers
 and interpreter memfd loaders may still be flagged by antivirus or GitHub

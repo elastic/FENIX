@@ -14,15 +14,27 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-require "fcntl"
-SYS_memfd_create = __FENIX_MEMFD_SYSCALL__
-fd = syscall(SYS_memfd_create, "", 1)
-raise "memfd_create failed" if fd.nil? || fd <= 0
-data = $stdin.read
-# Keep memfd open: do not File.open(fd) { ... } (block closes fd → ENOENT on exec).
-io = IO.new(fd, File::WRONLY)
-io.autoclose = false if io.respond_to?(:autoclose=)
-io.write(data)
-io.flush
-Fcntl.fchmod(fd, 0o755)
-exec("/proc/self/fd/#{fd}", "__FENIX_ARGV0__")
+# yaml-language-server: $schema=https://json.schemastore.org/catalog-info.json
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fenix
+  title: FENIX
+  description: >
+    Fileless Execution for NIX — Linux lab helpers for reproducing fileless
+    execution patterns for detection engineering.
+  annotations:
+    github.com/project-slug: elastic/fenix
+  links:
+    - url: https://github.com/elastic/fenix
+      title: GitHub repository
+      icon: github
+  tags:
+    - security
+    - linux
+    - detection-engineering
+spec:
+  type: tool
+  lifecycle: experimental
+  owner: group:threat-research-and-detection-engineering
+  system: security
